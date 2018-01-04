@@ -1,0 +1,47 @@
+version: '3'
+services:
+  queue-master:
+    build: ./queue-master
+    depends_on:
+      - queue-redis
+    environment:
+      - NODE_ENV=development
+      - PORT=80
+      - REDIS_HOST=queue-redis
+    networks:
+      - queue-example-network
+    ports:
+      - '9000:80'
+  worker-addition:
+    build: ./worker-addition
+    depends_on:
+      - queue-redis
+    environment:
+      - NODE_ENV=development
+      - PORT=80
+      - REDIS_HOST=queue-redis
+    networks:
+      - queue-example-network
+    ports:
+      - '9001:80'
+  worker-subtraction:
+    build: ./worker-subtraction
+    depends_on:
+      - queue-redis
+    environment:
+      - NODE_ENV=development
+      - PORT=80
+      - REDIS_HOST=queue-redis
+    networks:
+      - queue-example-network
+    ports:
+      - '9002:80'
+  queue-redis:
+    image: redis:4-alpine
+    networks:
+      - queue-example-network
+    ports:
+      - '6379:6379'
+networks:
+  queue-example-network:
+    driver: bridge

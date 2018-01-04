@@ -1,0 +1,1 @@
+FROM d3lirium/docker-node

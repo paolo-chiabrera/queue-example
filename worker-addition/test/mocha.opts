@@ -1,0 +1,7 @@
+--bail
+--check-leaks
+--colors
+--recursive
+--reporter min
+--require test/test.config.js
+test/**/*.test.js

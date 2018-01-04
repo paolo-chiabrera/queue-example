@@ -1,0 +1,35 @@
+{
+  "name": "queue-master",
+  "version": "1.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/paolo-chiabrera/queue-master.git",
+  "author": "=paolo.chiabrera <=paolo.chiabrera@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix **/*.js",
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "bee-queue": "^1.1.0",
+    "compression": "^1.7.0",
+    "convict": "^4.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-healthcheck": "^0.1.0",
+    "express-status-monitor": "^1.0.0",
+    "forever": "^0.15.3",
+    "helmet": "^3.8.1",
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^4.0.1"
+  }
+}
